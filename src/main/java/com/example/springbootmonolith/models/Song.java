@@ -21,9 +21,6 @@ public class Song {
     @Column
     private String artist;
 
-    @Column
-    private String album;
-
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH,
                     CascadeType.MERGE, CascadeType.REFRESH})
@@ -70,11 +67,4 @@ public class Song {
         this.artist = artist;
     }
 
-    public String getAlbum() {
-        return album;
-    }
-
-    public void setAlbum(String album) {
-        this.album = album;
-    }
 }
