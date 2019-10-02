@@ -22,6 +22,9 @@ public class UserProfile {
     @Column
     private String address;
 
+    @Column
+    private Long userId;
+
     @JsonIgnore
     @OneToOne(mappedBy = "userProfile",
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
@@ -63,5 +66,9 @@ public class UserProfile {
     public void setAddress(String address) {
         this.address = address;
     }
+
+   // public Long getUserId() {return userId; };
+
+    //public void setUserId(User user) {this.userId = User.getId();};
 
 }
