@@ -20,5 +20,5 @@ Our approach began with utilizing Spring technology. We mapped out the goals for
 
 ## UNSOLVED PROBLEMS
 
-## HURDLE
+## HURDLES
 We struggled to create the tables with the application in the early stages of development. We also struggled to translate the SQL in the IntelliJ environment.
