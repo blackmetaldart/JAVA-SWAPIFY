@@ -22,6 +22,7 @@ public class UserController {
         return ResponseEntity.ok(new JwtResponse(userService.login(user)));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("admin/user/list")
     public Iterable<User> listUsers() {
         return userService. listUsers();
@@ -37,11 +38,13 @@ public class UserController {
         return userService.addSong(username, songId);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/user/{userId}")
     public HttpStatus deleteUserById(@PathVariable Long userId) {
         return userService.deleteById(userId);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/hello")
     public String helloWorld() {
         return "Hello World!!";

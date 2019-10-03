@@ -14,7 +14,7 @@ public class SongController {
     @Autowired
     SongService songService;
 
-    //@PreAuthorize("hasRole('ROLE_ARTIST')")
+    @PreAuthorize("hasRole('ARTIST')")
     @PostMapping
     public Song createSong(@RequestBody Song song){
         return songService.createSong(song);
