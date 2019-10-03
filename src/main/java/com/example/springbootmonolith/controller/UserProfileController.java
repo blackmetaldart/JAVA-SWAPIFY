@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.*;
 public class UserProfileController {
 
     @Autowired
-    UserProfileService userProfileService;
+    public void setUserProfileService(UserProfileService userProfileService){
+        this.userProfileService = userProfileService;
+    }
 
     @GetMapping("/{username}")
     public UserProfile getUserProfile(@PathVariable String username) {
@@ -21,4 +23,8 @@ public class UserProfileController {
     public UserProfile createUserProfile(@PathVariable String username, @RequestBody UserProfile userProfile) {
         return userProfileService.createUserProfile(username, userProfile);
     }
+
+    private UserProfileService userProfileService;
+
+
 }
