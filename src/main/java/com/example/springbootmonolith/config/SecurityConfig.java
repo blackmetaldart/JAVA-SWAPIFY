@@ -37,14 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/signup/**", "/login/**").permitAll()
-                .antMatchers("/role/**", "/song").hasRole("GENERAL")
-                .antMatchers("/user/**", "/profile/**").hasRole("ADMIN")
-                .antMatchers("/admin/**", "/role/**").hasRole("ADMIN")
+                .antMatchers("/").permitAll()
                 .and()
                 .httpBasic();
 
-        http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     //    @Override

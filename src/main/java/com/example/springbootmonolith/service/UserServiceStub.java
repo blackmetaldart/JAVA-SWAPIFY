@@ -34,7 +34,7 @@ public class UserServiceStub implements UserService {
     }
 
     @Override
-    public User addSong(String username, int songId) {
+    public User addSong(String username, Long songId) {
         return null;
     }
 

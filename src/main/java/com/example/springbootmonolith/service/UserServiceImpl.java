@@ -97,7 +97,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User addSong(String username, int songId) {
+    public User addSong(String username, Long songId) {
         Song song = songRepository.findById(songId).get();
         User user = getUser(username);
         user.addSong(song);

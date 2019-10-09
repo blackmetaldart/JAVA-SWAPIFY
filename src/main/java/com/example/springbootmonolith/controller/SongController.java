@@ -4,6 +4,7 @@ package com.example.springbootmonolith.controller;
 import com.example.springbootmonolith.models.Song;
 import com.example.springbootmonolith.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,5 +25,11 @@ public class SongController {
     public Iterable<Song> listSongs(){
         return songService.listSongs();
     }
+
+    @DeleteMapping("/{songId}")
+    public void deleteSongById(@PathVariable Long songId) {
+        songService.deleteSongById(songId);
+    }
+
 
 }
