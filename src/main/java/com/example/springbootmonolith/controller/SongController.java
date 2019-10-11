@@ -15,17 +15,21 @@ public class SongController {
     @Autowired
     SongService songService;
 
+    //THIS ENDPOINT ALLOWS A USER WITH THE ARTIST ROLE TO CREATE A SONG
     @PreAuthorize("hasRole('ARTIST')")
     @PostMapping
     public Song createSong(@RequestBody Song song){
         return songService.createSong(song);
     }
 
+    //THIS ENDPOINT ALLOWS A USER TO ACCESS THE SONG LIST
     @GetMapping("/list")
     public Iterable<Song> listSongs(){
         return songService.listSongs();
     }
 
+    //THIS ENDPOINT ALLOWS THE USER WITH THE ROLE ADMIN TO DELETE A SONG BY ITS ID
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{songId}")
     public void deleteSongById(@PathVariable Long songId) {
         songService.deleteSongById(songId);
