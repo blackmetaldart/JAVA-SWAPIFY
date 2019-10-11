@@ -14,6 +14,7 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
+    //ID / USERNAME / PASSWORD COLUMNS FOR TABLES
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +26,18 @@ public class User {
     @Column
     private String password;
 
+    //CONNECTS ONE USER TO THE ONE USER PROFILE TABLE
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="user_profile_id")
     private UserProfile userProfile;
 
+    //CONNECTS THE USER TO A USER ROLE
     @ManyToOne(cascade = {CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "user_role_id", nullable = false)
     private UserRole userRole;
 
+    //CONNECTS MANY SONGS TO MANY USERS
     @ManyToMany(fetch = FetchType.LAZY,
                 cascade = {CascadeType.DETACH,
                         CascadeType.MERGE, CascadeType.REFRESH})
@@ -42,6 +46,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "song_id"))
     private List<Song> songs;
 
+    //AN EMPTY USER CONSTRUCTOR
     public User() {}
 
     public List<Song> addSong(Song song){
@@ -52,6 +57,7 @@ public class User {
         return songs;
     }
 
+    //THE GETTERS AND SETTERS FOR THE COLUMNS
     public List<Song> getSongs(){ return songs; }
 
     public void setSongs(List<Song> songs) { this.songs = songs; }
