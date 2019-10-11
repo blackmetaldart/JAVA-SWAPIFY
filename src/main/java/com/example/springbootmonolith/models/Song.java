@@ -7,6 +7,8 @@ import java.util.List;
 @Entity
 @Table(name = "song")
 public class Song {
+
+    //ID / TITLE / SONG-LENGTH / ARTIST COLUMNS FOR TABLE
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +23,7 @@ public class Song {
     @Column
     private String artist;
 
+    //CONNECTS MANY SONGS TO MANY USERS
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH,
                     CascadeType.MERGE, CascadeType.REFRESH})
@@ -29,8 +32,10 @@ public class Song {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> users;
 
-    public Song() { }
+    //EMPTY SONG CONSTRUCTOR
+    public Song() {}
 
+    //GETTERS AND SETTERS FOR THE COLUMNS
     public List<User> getUsers(){ return users; }
 
     public void setUsers(List<User> users) { this.users = users; }
