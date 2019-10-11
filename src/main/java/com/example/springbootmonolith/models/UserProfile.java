@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "userProfile")
 public class UserProfile {
 
+    //ID / EMAIL/ MOBILE/ ADDRESS / USERID COLUMNS FOR TABLES
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,14 +26,17 @@ public class UserProfile {
     @Column
     private Long userId;
 
+    //MAPS THE USER PROFILES TO THE USERS
     @JsonIgnore
     @OneToOne(mappedBy = "userProfile",
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
                     CascadeType.PERSIST, CascadeType.REFRESH})
     private User user;
 
-    public UserProfile() {}
+    //EMPTY USERPROFILE CONSTRUCTOR
+    public UserProfile(){}
 
+    //GETTERS AND SETTERS FOR THE COLUMNS
     public User getUser() { return user; }
 
     public void setUser(User user) { this.user = user; }
@@ -67,8 +71,8 @@ public class UserProfile {
         this.address = address;
     }
 
-   // public Long getUserId() {return userId; };
+    public Long getUserId() {return userId; };
 
-    //public void setUserId(User user) {this.userId = User.getId();};
+    public void setUserId(Long userId) {this.userId = userId;};
 
 }
