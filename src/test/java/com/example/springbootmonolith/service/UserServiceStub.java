@@ -10,6 +10,12 @@ public class UserServiceStub implements UserService {
 
     @Override
     public User getUser(String username) {
+        User user = new User();
+        user.setUsername(username);
+        return user;
+    }
+
+    public User addPost(String username, Long postId) {
         return null;
     }
 
@@ -25,16 +31,6 @@ public class UserServiceStub implements UserService {
 
     @Override
     public String login(User user) {
-        return null;
-    }
-
-    @Override
-    public HttpStatus deleteById(Long userId) {
-        return null;
-    }
-
-    @Override
-    public User addSong(String username, Long songId) {
         return null;
     }
 

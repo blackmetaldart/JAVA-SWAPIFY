@@ -34,15 +34,21 @@ public class UserControllerTest {
     private JwtUtil jwtUtil;
 
     @Test
-    public void helloWorld_ReturnsString_Success() throws Exception {
+    public void signup_Success() throws Exception{
+
         RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .get("/hello")
-                .accept(MediaType.APPLICATION_JSON);
+                .post("/signup")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(createUserInJson("x","abc"));
 
-        mockMvc.perform(requestBuilder)
+        when(userService.createUser(any())).thenReturn("123456");
+
+        MvcResult result = mockMvc.perform(requestBuilder)
                 .andExpect(status().isOk())
-                .andExpect(content().string("Hello World!!"));
+                .andExpect(content().json("{\"token\":\"123456\"}"))
+                .andReturn();
 
+        System.out.println(result.getResponse().getContentAsString());
     }
 
     @Test
@@ -63,31 +69,10 @@ public class UserControllerTest {
         System.out.println(result.getResponse().getContentAsString());
     }
 
+
     private static String createUserInJson (String name, String password) {
         return "{ \"name\": \"" + name + "\", " +
                 "\"password\":\"" + password + "\"}";
-
     }
-
-    @Test
-    public void signUp_Success() throws Exception{
-
-        RequestBuilder requestBuilder = MockMvcRequestBuilders
-                .post("/signup")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(createUserInJson("joe","abc"));
-
-        when(userService.login(any())).thenReturn("123456");
-
-        MvcResult result = mockMvc.perform(requestBuilder)
-                .andExpect(status().isOk())
-                .andExpect(content().json("{\"token\":\"123456\"}"))
-                .andReturn();
-
-        System.out.println(result.getResponse().getContentAsString());
-    }
-
-
-
-
 }
+
