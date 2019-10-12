@@ -10,28 +10,23 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class UserProfileControllerTest {
-    private UserProfileServiceImpl userProfileService;
+    private UserProfileController userProfileController;
 
     @Before
-    public void initializeUserProfile(){
-        userProfileService = new UserProfileServiceImpl(new UserServiceStub(), new UserProfileRepositoryStub());
+    public void initializeUserProfileController(){
+        userProfileController = new UserProfileController();
+        userProfileController.setUserProfileService(new UserProfileServiceStub());
     }
 
     @Test
-    public void createUserProfile_AddsProfile_Success(){
-
+    public void createUserProfile_SaveUserProfile_Success(){
         UserProfile userProfile = new UserProfile();
         userProfile.setEmail("batman@superhero.com");
 
-        UserProfile newProfile = userProfileService.createUserProfile("batman", userProfile);
+        UserProfile newProfile = userProfileController.createUserProfile("batman", userProfile);
 
         Assert.assertNotNull(newProfile);
         Assert.assertEquals(newProfile.getEmail(), userProfile.getEmail());
-    }
-
-    @Test
-    public void getUserProfile_RetrievesProfileByUsername_Success(){
-
     }
 
 }

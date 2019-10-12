@@ -37,8 +37,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     JwtUtil jwtUtil;
 
-    @Autowired
+
     UserProfileService userProfileService;
+
+    @Autowired
+    public void setUserProfileService(UserProfileService userProfileService){
+        this.userProfileService = userProfileService;
+    }
 
     @Autowired
     @Qualifier("encoder")
@@ -118,4 +123,6 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(userId);
         return HttpStatus.OK;
     }
+
+
 }

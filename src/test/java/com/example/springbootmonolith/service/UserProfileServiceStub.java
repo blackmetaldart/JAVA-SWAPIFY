@@ -8,6 +8,8 @@ public class UserProfileServiceStub implements UserProfileService {
         userProfile.setEmail("batman@superhero.com");
         return userProfile;
     }
+
+
     @Override
     public UserProfile getUserProfile(String username) {
         return null;
