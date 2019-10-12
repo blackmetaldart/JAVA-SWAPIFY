@@ -52,7 +52,7 @@ public class UserControllerTest {
     }
 
     @Test
-    public void login_Success() throws Exception{
+    public void login_Returns200_Success() throws Exception{
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders
                 .post("/login")
@@ -73,6 +73,18 @@ public class UserControllerTest {
     private static String createUserInJson (String name, String password) {
         return "{ \"name\": \"" + name + "\", " +
                 "\"password\":\"" + password + "\"}";
+    }
+
+    @Test
+    public void helloWorld_ReturnsString_Success() throws Exception {
+
+        RequestBuilder requestBuilder = MockMvcRequestBuilders
+                .get("/hello")
+                .accept(MediaType.APPLICATION_JSON);
+
+        mockMvc.perform(requestBuilder)
+                .andExpect(status().isOk())
+                .andExpect(content().string("Hello World!!"));
     }
 }
 
