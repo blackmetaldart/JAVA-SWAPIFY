@@ -33,10 +33,10 @@ public class UserServiceTest {
     private UserRoleService userRoleService;
 
     @Mock
-    private PostService postService;
+    private SongService songService;
 
     @Mock
-    private PostRepository postRepository;
+    private SongRepository songRepository;
 
     @Mock
     private JwtUtil jwtUtil;

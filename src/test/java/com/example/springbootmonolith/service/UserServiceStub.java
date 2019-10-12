@@ -15,7 +15,7 @@ public class UserServiceStub implements UserService {
         return user;
     }
 
-    public User addPost(String username, Long postId) {
+    public User addSong(String username, Long songId) {
         return null;
     }
 
@@ -31,6 +31,11 @@ public class UserServiceStub implements UserService {
 
     @Override
     public String login(User user) {
+        return null;
+    }
+
+    @Override
+    public HttpStatus deleteById(Long userId) {
         return null;
     }
 
