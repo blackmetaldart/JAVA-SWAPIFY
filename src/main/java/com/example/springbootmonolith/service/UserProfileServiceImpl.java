@@ -10,14 +10,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserProfileServiceImpl implements UserProfileService {
 
-    @Autowired
+
     UserProfileRepository userProfileRepository;
 
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
+
     UserService userService;
+
+    @Autowired
+    public UserProfileServiceImpl(UserService userService, UserProfileRepository userProfileRepository){
+        this.userService = userService;
+        this.userProfileRepository = userProfileRepository;
+    }
 
     //THIS METHOD SETS A USER FOR A USERPROFILE AND SAVES IT IN THE USER PROFILE REPOSITORY
     @Override
