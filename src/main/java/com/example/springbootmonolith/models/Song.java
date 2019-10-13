@@ -35,6 +35,12 @@ public class Song {
     //EMPTY SONG CONSTRUCTOR
     public Song() {}
 
+    public Song(String title, int songLength, String artist) {
+        this.title = title;
+        this.songLength = songLength;
+        this.artist = artist;
+    }
+
     //GETTERS AND SETTERS FOR THE COLUMNS
     public List<User> getUsers(){ return users; }
 
