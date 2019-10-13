@@ -1,14 +1,12 @@
 
-# --SWAPIFY--
+# SWAPIFY
 
 ## BY : ALEXANDER BEACH  &&  ZAINAB AKRAMI
 
 ### SWAPIFY - A SPOTIFY CLONE USING JAVA AND SPRING FRAMEWORK
 
-### BRIEF DESCRIPTION
+### DESCRIPTION
 This project is a rough clone of the popular music app Spotify. This forum is dedicated entirely for ease of navigation for music fans. The Swapify App will accept user sign up data and populate specific tables with user information. The goal was to utilize the benefits of dependencies and SQL databases to store information about our users our data. Our users are our listeners and artists, and the data would be the song information and user information.
-
-### IMAGES
 
 ### TECHNOLOGIES USED
 This project was initialized on the Spring Frameworks Initializer. We wrote in the Java language and used the IntelliJ IDEA. We used Postgres to manipulate our databases and Maven dependencies to add additional functionality to our site. We had an understanding of SQL, and are starting to incorporate HTML, CSS, and JavaScript to make this a full-stack application.
@@ -19,6 +17,7 @@ Our approach began with utilizing Spring technology. We mapped out the goals for
 ## HOW TO USE
 
 ## UNSOLVED PROBLEMS
+We're still unsure of how to completely connect full-stack applications. There is a font-end that has the HTML, CSS, and JavaScript. There is a background that uses Java and database functionality.
 
 ## HURDLES
 We struggled to create the tables with the application in the early stages of development. We also struggled to translate the SQL in the IntelliJ environment.
