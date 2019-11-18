@@ -21,5 +21,5 @@ We're still unsure of how to completely connect full-stack applications. There i
 We struggled to create the tables with the application in the early stages of development. We also struggled to translate the SQL in the IntelliJ environment.
 
 ### AUTHORS
-* **ZAINAB AKRAMI** - [GITHUB](https://github.com/zainab21)
-* **ALEXANDER BEACH** - [GITHUB](https://github.com/MrAlexBeach)
+* **ZAINAB AKRAMI** - [GITHUB](https://github.com/zainabakrami)
+* **ALEXANDER BEACH** - [GITHUB](https://github.com/AlexBeachCodes)
