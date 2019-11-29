@@ -1,7 +1,7 @@
 
 # SWAPIFY
 
-### A SPOTIFY CLONE USING JAVA AND SPRING FRAMEWORK
+### A POSTGRESQL SERVER-SIDE APPLICATION THAT USES JAVA AND THE SPRING FRAMEWORK.
 
 ### DESCRIPTION
 This project is a rough clone of the popular music app Spotify. This forum is dedicated entirely for ease of navigation for music fans. The Swapify App will accept user sign up data and populate specific tables with user information. The goal was to utilize the benefits of dependencies and SQL databases to store information about our users our data. Our users are our listeners and artists, and the data would be the song information and user information.
