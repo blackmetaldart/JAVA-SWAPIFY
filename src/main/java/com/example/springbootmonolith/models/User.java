@@ -31,7 +31,7 @@ public class User {
     @JoinColumn(name="user_profile_id")
     private UserProfile userProfile;
 
-    //CONNECTS THE USER TO A USER ROLE
+    // CONNECTS THE USER TO A USER ROLE
     @ManyToOne(cascade = {CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "user_role_id", nullable = false)
