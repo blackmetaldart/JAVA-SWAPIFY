@@ -11,13 +11,13 @@ public class UserRoleServiceImpl implements UserRoleService {
     @Autowired
     UserRoleRepository userRoleRepository;
 
-    //THIS METHID SAVES A USER ROLE IN THE USER ROLE REPOSITORY
+    // THIS METHOD SAVES A USER ROLE IN THE USER ROLE REPOSITORY
     @Override
     public UserRole createRole(UserRole newRole) {
         return userRoleRepository.save(newRole);
     }
 
-    //THIS METHOD FINDS A USER ROLE IN THE REPOSITORY BY COMPARING IT WITH THE PASSED STRING PARAMETER
+    // THIS METHOD FINDS A USER ROLE IN THE REPOSITORY BY COMPARING IT WITH THE PASSED STRING PARAMETER
     @Override
     public UserRole getRole(String roleName) {
         return userRoleRepository.findByName(roleName);
