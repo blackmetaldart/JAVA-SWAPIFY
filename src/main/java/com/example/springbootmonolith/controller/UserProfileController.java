@@ -14,13 +14,13 @@ public class UserProfileController {
         this.userProfileService = userProfileService;
     }
 
-    //THIS ENDPOINT ALLOWS A USER TO GET A PROFILE WITH A USERNAME
+    // THIS ENDPOINT ALLOWS A USER TO GET A PROFILE WITH A USERNAME
     @GetMapping("/{username}")
     public UserProfile getUserProfile(@PathVariable String username) {
         return userProfileService.getUserProfile(username);
     }
 
-    //THIS ENDPOINT ALLOWS A USER TO CREATE A PROFILE USING THE USERNAME IN THE HEADER AND THE REQUEST BODY
+    // THIS ENDPOINT ALLOWS A USER TO CREATE A PROFILE USING THE USERNAME IN THE HEADER AND THE REQUEST BODY
     @PostMapping("/{username}")
     public UserProfile createUserProfile(@PathVariable String username, @RequestBody UserProfile userProfile) {
         return userProfileService.createUserProfile(username, userProfile);

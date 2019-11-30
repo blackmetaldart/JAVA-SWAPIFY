@@ -17,14 +17,14 @@ public class UserRoleController {
         this.roleService=userRoleService;
     }
 
-    //THIS METHOD ALLOWS A USER WITH THE ROLE OF ADMIN TO SEE A LIST OF THOSE WITH SPECIFIC ACCESS
+    // THIS METHOD ALLOWS A USER WITH THE ROLE OF ADMIN TO SEE A LIST OF THOSE WITH SPECIFIC ACCESS
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{rolename}")
     public UserRole getRole(@PathVariable String rolename) {
         return roleService.getRole(rolename);
     }
 
-    //THIS METHOD ALLOWS A USER WITH THE ROLE OF ADMIN TO CREATE A ROLE TO GRANT ACCESS
+    // THIS METHOD ALLOWS A USER WITH THE ROLE OF ADMIN TO CREATE A ROLE TO GRANT ACCESS
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/createRole")
     public UserRole createRole(@RequestBody UserRole role) {
