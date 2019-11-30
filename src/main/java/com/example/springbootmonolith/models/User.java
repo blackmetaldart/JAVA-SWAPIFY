@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
-    //ID / USERNAME / PASSWORD COLUMNS FOR TABLES
+    // ID / USERNAME / PASSWORD COLUMNS FOR TABLES
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class User {
     @Column
     private String password;
 
-    //CONNECTS ONE USER TO THE ONE USER PROFILE TABLE
+    // CONNECTS ONE USER TO THE ONE USER PROFILE TABLE
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="user_profile_id")
     private UserProfile userProfile;
@@ -37,7 +37,7 @@ public class User {
     @JoinColumn(name = "user_role_id", nullable = false)
     private UserRole userRole;
 
-    //CONNECTS MANY SONGS TO MANY USERS
+    // CONNECTS MANY SONGS TO MANY USERS
     @ManyToMany(fetch = FetchType.LAZY,
                 cascade = {CascadeType.DETACH,
                         CascadeType.MERGE, CascadeType.REFRESH})
@@ -46,7 +46,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "song_id"))
     private List<Song> songs;
 
-    //AN EMPTY USER CONSTRUCTOR
+    // AN EMPTY USER CONSTRUCTOR
     public User() {}
 
     public List<Song> addSong(Song song){
@@ -57,40 +57,22 @@ public class User {
         return songs;
     }
 
-    //THE GETTERS AND SETTERS FOR THE COLUMNS
+    // THE GETTERS AND SETTERS FOR THE COLUMNS
     public List<Song> getSongs(){ return songs; }
-
     public void setSongs(List<Song> songs) { this.songs = songs; }
 
     public UserRole getUserRole() { return userRole; }
-
     public void setUserRole(UserRole userRole) { this.userRole = userRole; }
 
     public UserProfile getUserProfile() { return userProfile; }
-
     public void setUserProfile(UserProfile userProfile) { this.userProfile = userProfile; }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getUsername() { return username; }
+    public void setUsername(String username) { this.username = username; }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 }
