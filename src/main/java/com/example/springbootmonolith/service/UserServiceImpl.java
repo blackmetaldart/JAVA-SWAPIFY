@@ -69,19 +69,19 @@ public class UserServiceImpl implements UserService {
         return authorities;
     }
 
-    //THIS METHOD RETURNS A USER IN THE USER REPOSITORY THAT MATCHES THE PASSED STRNG 'USERNAME'
+    // THIS METHOD RETURNS A USER IN THE USER REPOSITORY THAT MATCHES THE PASSED STRNG 'USERNAME'
     @Override
     public User getUser(String username) {
         return userRepository.findByUsername(username);
     }
 
-    //THIS METHOD RETURNS ALL THE USERS IN THE USER REPOSITORY
+    // THIS METHOD RETURNS ALL THE USERS IN THE USER REPOSITORY
     @Override
     public Iterable<User> listUsers() {
         return userRepository.findAll();
     }
 
-    //THIS METHOD CREATES A USER AFTER SIGNUP AND RETURNS A TOKEN
+    // THIS METHOD CREATES A USER AFTER SIGNUP AND RETURNS A TOKEN
     @Override
     public String createUser(User newUser) {
         UserRole userRole = userRoleService.getRole(newUser.getUserRole().getName());
@@ -94,7 +94,7 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-    //THIS METHOD GENERATES A TOKEN IF THE USERNAME AND PASSWORD MATCH THAT OF A USER IN THE USER REPOSITORY
+    // THIS METHOD GENERATES A TOKEN IF THE USERNAME AND PASSWORD MATCH THAT OF A USER IN THE USER REPOSITORY
     @Override
     public String login(User user){
         User newUser = userRepository.findByUsername(user.getUsername());
@@ -106,7 +106,7 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-    //THIS ADDS A SONG IN THE REPOSITORY TO A USER'S SONG LIST AND UPDATES THE REPOSITORY
+    // THIS ADDS A SONG IN THE REPOSITORY TO A USER'S SONG LIST AND UPDATES THE REPOSITORY
     @Override
     public User addSong(String username, Long songId) {
         Song song = songRepository.findById(songId).get();
@@ -116,7 +116,7 @@ public class UserServiceImpl implements UserService {
         return userRepository.save(user);
     }
 
-    //THIS DELETES A USER BY THE USER ID
+    // THIS DELETES A USER BY THE USER ID
     @Override
     public HttpStatus deleteById(Long userId){
         userRepository.deleteById(userId);
