@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
     @Qualifier("encoder")
     PasswordEncoder bCryptPasswordEncoder;
 
-    //THIS METHOD
+    // THIS METHOD RETURNS USER DETAILS WITH A USERNAME
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = getUser(username);
@@ -61,7 +61,6 @@ public class UserServiceImpl implements UserService {
                 true, true, true, true, getGrantedAuthorities(user));
     }
 
-    //THIS METHOD
     private List<GrantedAuthority> getGrantedAuthorities(User user){
         List<GrantedAuthority> authorities = new ArrayList<>();
 
