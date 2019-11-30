@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name = "song")
 public class Song {
 
-    //ID / TITLE / SONG-LENGTH / ARTIST COLUMNS FOR TABLE
+    // ID / TITLE / SONG-LENGTH / ARTIST COLUMNS FOR TABLE
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Song {
     @Column
     private String artist;
 
-    //CONNECTS MANY SONGS TO MANY USERS
+    // CONNECTS MANY SONGS TO MANY USERS
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH,
                     CascadeType.MERGE, CascadeType.REFRESH})
@@ -41,41 +41,21 @@ public class Song {
         this.artist = artist;
     }
 
-    //GETTERS AND SETTERS FOR THE COLUMNS
+    // GETTERS AND SETTERS FOR THE COLUMNS
     public List<User> getUsers(){ return users; }
 
     public void setUsers(List<User> users) { this.users = users; }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public String getTitle() {
-        return title;
-    }
+    public int getSongLength() { return songLength; }
+    public void setSongLength(int songLength) { this.songLength = songLength; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getSongLength() {
-        return songLength;
-    }
-
-    public void setSongLength(int songLength) {
-        this.songLength = songLength;
-    }
-
-    public String getArtist() {
-        return artist;
-    }
-
-    public void setArtist(String artist) {
-        this.artist = artist;
-    }
+    public String getArtist() { return artist; }
+    public void setArtist(String artist) { this.artist = artist; }
 
 }
