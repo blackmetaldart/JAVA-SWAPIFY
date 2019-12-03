@@ -22,4 +22,4 @@ We struggled to create the tables with the application in the early stages of de
 
 ### AUTHORS
 * **ZAINAB AKRAMI** - [GITHUB](https://github.com/zainabakrami)
-* **ALEXANDER BEACH** - [GITHUB](https://github.com/AlexBeachCodes)
+* **ALEXANDER BEACH** - [GITHUB](https://github.com/blackmetaldart)
