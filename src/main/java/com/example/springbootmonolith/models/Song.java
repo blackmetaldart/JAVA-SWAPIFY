@@ -18,7 +18,7 @@ public class Song {
     private String title;
 
     @Column
-    private int songLength;
+    private Long songLength;
 
     @Column
     private String artist;
@@ -32,10 +32,10 @@ public class Song {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private List<User> users;
 
-    //EMPTY SONG CONSTRUCTOR
+    // EMPTY SONG CONSTRUCTOR
     public Song() {}
 
-    public Song(String title, int songLength, String artist) {
+    public Song(String title, Long songLength, String artist) {
         this.title = title;
         this.songLength = songLength;
         this.artist = artist;
@@ -52,8 +52,8 @@ public class Song {
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
 
-    public int getSongLength() { return songLength; }
-    public void setSongLength(int songLength) { this.songLength = songLength; }
+    public Long getSongLength() { return songLength; }
+    public void setSongLength(Long songLength) { this.songLength = songLength; }
 
     public String getArtist() { return artist; }
     public void setArtist(String artist) { this.artist = artist; }
