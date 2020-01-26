@@ -7,11 +7,11 @@ This project is a rough clone of the popular music app Spotify. This forum is de
 
 ### TECHNOLOGIES USED
 * [JAVA](https://www.java.com/en/) - A programming language and computing platform
-* [SPRING BOOT](https://spring.io/) - An open source Java-based framework used to create a micro-service (tutorialspoint.com)
-* [INTELLIJ](https://www.jetbrains.com/idea/) - An IDE used to develop the Java back-end files
-* [POSTGRESQL](https://www.postgresql.org) - An object-relational database system
-* [MAVEN](https://maven.apache.org/) - Dependency Management 
+* [SPRING BOOT](https://spring.io/projects/spring-boot) - An open source Java-based framework used to create a micro-service (tutorialspoint.com)
+* [POSTGRESQL](https://www.postgresql.org) - An object-relational database system that uses and extends the [SQL](https://www.w3schools.com/sql/) language
+* [MAVEN](https://maven.apache.org/what-is-maven.html) - A build automation tool for managing the dependencies 
 * [ATOM](https://atom.io) - A text editor used to write the front-end files
+* [INTELLIJ](https://www.jetbrains.com/idea/) - An IDE used to develop the Java back-end files
 
 ### APPROACH TAKEN
 Our approach began with utilizing Spring technology. We mapped out the goals for the application. This helped us understand how to progress through the development of the application. Afterwards, we had to implement the functionality in stages. We mapped out all of the endpoints, their purpose, and the privileges needed to access them. We rebuilt the project four times because we didnt know how to troubleshoot Spring Framework technology in the IntelliJ environment. We also didn’t think to add the repo to a Git flow because we didn’t grasp the concept of VCS (Version Control System).
