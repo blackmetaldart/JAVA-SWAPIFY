@@ -10,7 +10,6 @@ This project is a rough clone of the popular music app Spotify. This forum is de
 * [SPRING BOOT](https://spring.io/projects/spring-boot) - An open source Java-based framework used to create a micro-service (tutorialspoint.com)
 * [POSTGRESQL](https://www.postgresql.org) - An object-relational database system that uses and extends the [SQL](https://www.w3schools.com/sql/) language
 * [MAVEN](https://maven.apache.org/what-is-maven.html) - A build automation tool for managing the dependencies 
-* [ATOM](https://atom.io) - A text editor used to write the front-end files
 * [INTELLIJ](https://www.jetbrains.com/idea/) - An IDE used to develop the Java back-end files
 
 ### APPROACH TAKEN
